@@ -1336,7 +1336,7 @@ void I_UpdateVideoMode(void)
     // [FG] aspect ratio correction for the canonical video modes
     if (SCREENHEIGHT == 200 || SCREENHEIGHT == 400)
     {
-      actualheight = 6*SCREENHEIGHT/5;
+      actualheight = SCREENHEIGHT;
     }
     else
     {
@@ -1347,10 +1347,10 @@ void I_UpdateVideoMode(void)
     SDL_RenderSetLogicalSize(sdl_renderer, SCREENWIDTH, actualheight);
 
     // [FG] make sure initial window size is always >= 640x480
-    while (screen_multiply*SCREENWIDTH < 640 || screen_multiply*actualheight < 480)
-    {
-      screen_multiply++;
-    }
+    //while (screen_multiply*SCREENWIDTH < 640 || screen_multiply*actualheight < 480)
+    //{
+    //  screen_multiply++;
+    //}
 
     // [FG] apply screen_multiply to initial window size
     if (!desired_fullscreen)
